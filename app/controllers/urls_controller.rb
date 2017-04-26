@@ -1,6 +1,7 @@
 class UrlsController < ApplicationController
 	 def index
         @urls = Url.all
+        @url = Url.new
     end
 
     def show
@@ -17,7 +18,7 @@ class UrlsController < ApplicationController
 	  if @url.save
 	      redirect_to @url  
 	  else
-	      render 'new'
+	      render 'index'
 	  end   
 	end
 

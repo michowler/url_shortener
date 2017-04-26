@@ -14,11 +14,9 @@ class Url < ApplicationRecord
 
     def is_valid_url
     #TODO upgrade validations
-   
-    	unless !self.long_url.nil? && self.long_url.start_with?("http://", "https://") 
+   		unless !self.long_url.nil? && self.long_url.start_with?("http://", "https://") 
       		errors.add(:long_url, "must start with http:// or https://")
     	end
-   
 	end
 
 end
